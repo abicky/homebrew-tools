@@ -5,20 +5,20 @@
 class Ecsmec < Formula
   desc "A CLI tool for Amazon ECS that provides some commands to execute bothersome operations"
   homepage "https://github.com/abicky/ecsmec"
-  version "0.1.1"
+  version "0.1.2"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/abicky/ecsmec/releases/download/v0.1.1/ecsmec_darwin_amd64.tar.gz"
-    sha256 "8a0659ecb9ee4faa8f52aa0641a58e4d6e79d94c5e77eafadfceb35061cd8f91"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/abicky/ecsmec/releases/download/v0.1.2/ecsmec_darwin_amd64.tar.gz"
+    sha256 "6fad31400f2bb106ae5c37ffb140222705e38f41c7186b31ea49a2e8dba379fc"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/abicky/ecsmec/releases/download/v0.1.1/ecsmec_linux_amd64.tar.gz"
-    sha256 "54d5d40e068972377f9670ec92cf44610ef6546175a49e1c922ea718231996c2"
+    url "https://github.com/abicky/ecsmec/releases/download/v0.1.2/ecsmec_linux_amd64.tar.gz"
+    sha256 "59e5bed8e124ce7f8835a1d7c188d1878011c3df245be30b11d6502412af23e5"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/abicky/ecsmec/releases/download/v0.1.1/ecsmec_linux_arm64.tar.gz"
-    sha256 "9dfa424abb198082899090e1d3836540b89284a773abda59317a5da07993c954"
+    url "https://github.com/abicky/ecsmec/releases/download/v0.1.2/ecsmec_linux_arm64.tar.gz"
+    sha256 "074a8994fd229ff27887b186b39e67f848e63ac5fa676b54282fba790cb27558"
   end
 
   def install
