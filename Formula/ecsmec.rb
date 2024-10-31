@@ -5,24 +5,48 @@
 class Ecsmec < Formula
   desc "A CLI tool for Amazon ECS that provides some commands to execute bothersome operations"
   homepage "https://github.com/abicky/ecsmec"
-  version "0.1.2"
-  bottle :unneeded
+  version "0.1.3"
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/abicky/ecsmec/releases/download/v0.1.2/ecsmec_darwin_amd64.tar.gz"
-    sha256 "6fad31400f2bb106ae5c37ffb140222705e38f41c7186b31ea49a2e8dba379fc"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/abicky/ecsmec/releases/download/v0.1.2/ecsmec_linux_amd64.tar.gz"
-    sha256 "59e5bed8e124ce7f8835a1d7c188d1878011c3df245be30b11d6502412af23e5"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/abicky/ecsmec/releases/download/v0.1.2/ecsmec_linux_arm64.tar.gz"
-    sha256 "074a8994fd229ff27887b186b39e67f848e63ac5fa676b54282fba790cb27558"
+  on_macos do
+    on_intel do
+      url "https://github.com/abicky/ecsmec/releases/download/v0.1.3/ecsmec_darwin_amd64.tar.gz"
+      sha256 "0a0f4b522f27ef85af43847aebb7be0935d8895f2de80c43fde05334c3c6efc4"
+
+      def install
+        bin.install "ecsmec"
+      end
+    end
+    on_arm do
+      url "https://github.com/abicky/ecsmec/releases/download/v0.1.3/ecsmec_darwin_arm64.tar.gz"
+      sha256 "b657d09704c0e4458d05d7c11d8e260ff9a603b718491eb4b4e56d24fe4771d4"
+
+      def install
+        bin.install "ecsmec"
+      end
+    end
   end
 
-  def install
-    bin.install "ecsmec"
+  on_linux do
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/abicky/ecsmec/releases/download/v0.1.3/ecsmec_linux_amd64.tar.gz"
+        sha256 "fd1b3b4910c867df06be315f6e9ce36428ff38a49e01776924509bb4b49b6329"
+
+        def install
+          bin.install "ecsmec"
+        end
+      end
+    end
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/abicky/ecsmec/releases/download/v0.1.3/ecsmec_linux_arm64.tar.gz"
+        sha256 "1246b26a4ac513511e105f552c8b23e8d87c8ca8b78ecec6541ef2836db07e0e"
+
+        def install
+          bin.install "ecsmec"
+        end
+      end
+    end
   end
 
   test do
