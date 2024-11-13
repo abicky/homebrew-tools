@@ -14,6 +14,7 @@ class Ecsmec < Formula
 
       def install
         bin.install "ecsmec"
+        generate_completions_from_executable(bin/"ecsmec", "completion")
       end
     end
     on_arm do
@@ -22,6 +23,7 @@ class Ecsmec < Formula
 
       def install
         bin.install "ecsmec"
+        generate_completions_from_executable(bin/"ecsmec", "completion")
       end
     end
   end
@@ -34,6 +36,7 @@ class Ecsmec < Formula
 
         def install
           bin.install "ecsmec"
+          generate_completions_from_executable(bin/"ecsmec", "completion")
         end
       end
     end
@@ -44,6 +47,7 @@ class Ecsmec < Formula
 
         def install
           bin.install "ecsmec"
+          generate_completions_from_executable(bin/"ecsmec", "completion")
         end
       end
     end
