@@ -5,12 +5,12 @@
 class Akv < Formula
   desc "A CLI tool for injecting Azure Key Vault secrets"
   homepage "https://github.com/abicky/akv"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/abicky/akv/releases/download/v0.1.0/akv_darwin_amd64.tar.gz"
-      sha256 "488d75c5f7aa39e41fbacdab35db27adc58bfa8e615b9cbbda77a803e0134400"
+      url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_darwin_amd64.tar.gz"
+      sha256 "293906793782a096fe94b48da113cd23765e08cca71cadf2c7c59d7ecbeda240"
 
       def install
         bin.install "akv"
@@ -18,8 +18,8 @@ class Akv < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/abicky/akv/releases/download/v0.1.0/akv_darwin_arm64.tar.gz"
-      sha256 "a1a5192fbeb5574c9d1dbc8397c9bfbb80d81f032210e612c8cfc9faefd1a7b3"
+      url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_darwin_arm64.tar.gz"
+      sha256 "079e9449fef704499162d853d19ec94689c5af80f3701bf3951ea6f97b47e89f"
 
       def install
         bin.install "akv"
@@ -31,8 +31,8 @@ class Akv < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/abicky/akv/releases/download/v0.1.0/akv_linux_amd64.tar.gz"
-        sha256 "869e7d8cd978e8498d2dcd52b3d8825edfedec28ca5cf17b28fce22747359393"
+        url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_linux_amd64.tar.gz"
+        sha256 "809a986fb8993e630a8b81ae45c77caafedce8ae120e15fffca6a031e4a4806b"
 
         def install
           bin.install "akv"
@@ -42,8 +42,8 @@ class Akv < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/abicky/akv/releases/download/v0.1.0/akv_linux_arm64.tar.gz"
-        sha256 "b9af9c1ff89df7fe5056324a07885e54174b552ad41c83a746369e07a9305377"
+        url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_linux_arm64.tar.gz"
+        sha256 "9b727b6bf8f650fd8af52bc25edf6b745048f818810749b094cb037fd3973b9f"
 
         def install
           bin.install "akv"
