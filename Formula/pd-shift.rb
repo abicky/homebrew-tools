@@ -10,7 +10,7 @@ class PdShift < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_darwin_amd64.tar.gz"
-      sha256 "69d26242d3d27e05698be6d74b2dfcb7e036245d53e3028854fd3dcf3bd267fd"
+      sha256 "106bf2eba656404dc33da4220e6ac3e8062a2d5ddf1778e34633b3c6bb60a3ee"
 
       def install
         bin.install "pd-shift"
@@ -19,7 +19,7 @@ class PdShift < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_darwin_arm64.tar.gz"
-      sha256 "df8953a1fed0edfdb14265f9ef9730be1ab2272b4d548b65303c88fd175c2d65"
+      sha256 "79e11b5958a0025a3109fe4bbe9da2e412b1dd74bd9fd67828c220df0ebaf1d2"
 
       def install
         bin.install "pd-shift"
@@ -31,7 +31,7 @@ class PdShift < Formula
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
       url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_linux_amd64.tar.gz"
-      sha256 "e554c784f97cc88f40e677c696c466c12f920f9b48376d96cf73303627fb3732"
+      sha256 "2f62f7c8425e449c85ecc9e94a910c415bfe24b7aee16e4a9239f90a9741a010"
       def install
         bin.install "pd-shift"
         generate_completions_from_executable(bin/"pd-shift", "completion")
@@ -39,7 +39,7 @@ class PdShift < Formula
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
       url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_linux_arm64.tar.gz"
-      sha256 "cf3576393c07d4a7a2cf4e6558ef88d9c2db1da422ea8c80c82806e54110436b"
+      sha256 "dbf794bb3abd1aaa5a9fee12265c9dda89d3413695851235a0fcc50e5c34e616"
       def install
         bin.install "pd-shift"
         generate_completions_from_executable(bin/"pd-shift", "completion")
