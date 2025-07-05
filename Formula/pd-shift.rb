@@ -5,12 +5,12 @@
 class PdShift < Formula
   desc "A CLI tool for managing PagerDuty on-call shifts"
   homepage "https://github.com/abicky/pd-shift"
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_darwin_amd64.tar.gz"
-      sha256 "106bf2eba656404dc33da4220e6ac3e8062a2d5ddf1778e34633b3c6bb60a3ee"
+      url "https://github.com/abicky/pd-shift/releases/download/v0.1.1/pd-shift_darwin_amd64.tar.gz"
+      sha256 "6c611d81d02b38b9782241ec4973a9efae95b711cbddce2ac19746dd6035f19c"
 
       def install
         bin.install "pd-shift"
@@ -18,8 +18,8 @@ class PdShift < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_darwin_arm64.tar.gz"
-      sha256 "79e11b5958a0025a3109fe4bbe9da2e412b1dd74bd9fd67828c220df0ebaf1d2"
+      url "https://github.com/abicky/pd-shift/releases/download/v0.1.1/pd-shift_darwin_arm64.tar.gz"
+      sha256 "e406a0917eeddf8d889f18d19109b832fac51d1a37652549ae2bed225c78f499"
 
       def install
         bin.install "pd-shift"
@@ -30,16 +30,16 @@ class PdShift < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_linux_amd64.tar.gz"
-      sha256 "2f62f7c8425e449c85ecc9e94a910c415bfe24b7aee16e4a9239f90a9741a010"
+      url "https://github.com/abicky/pd-shift/releases/download/v0.1.1/pd-shift_linux_amd64.tar.gz"
+      sha256 "f7936e26242f738deb037cea812d19f3623bc1034957f6544ab9f4a1b585a239"
       def install
         bin.install "pd-shift"
         generate_completions_from_executable(bin/"pd-shift", "completion")
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/abicky/pd-shift/releases/download/v0.1.0/pd-shift_linux_arm64.tar.gz"
-      sha256 "dbf794bb3abd1aaa5a9fee12265c9dda89d3413695851235a0fcc50e5c34e616"
+      url "https://github.com/abicky/pd-shift/releases/download/v0.1.1/pd-shift_linux_arm64.tar.gz"
+      sha256 "cfbd486b87dbdcfd31faf751861563b827755daf1bed4880f098bced77d22a51"
       def install
         bin.install "pd-shift"
         generate_completions_from_executable(bin/"pd-shift", "completion")
