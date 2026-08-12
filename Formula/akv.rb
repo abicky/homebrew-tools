@@ -5,23 +5,23 @@
 class Akv < Formula
   desc "A CLI tool for injecting Azure Key Vault secrets"
   homepage "https://github.com/abicky/akv"
-  version "0.1.1"
+  version "0.1.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_darwin_amd64.tar.gz"
-      sha256 "293906793782a096fe94b48da113cd23765e08cca71cadf2c7c59d7ecbeda240"
+      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_darwin_amd64.tar.gz"
+      sha256 "367911c92ab9a792238b8d8357dea2d37b858967c38b310be4e7fe20c3744d63"
 
-      def install
+      define_method(:install) do
         bin.install "akv"
         generate_completions_from_executable(bin/"akv", "completion")
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_darwin_arm64.tar.gz"
-      sha256 "079e9449fef704499162d853d19ec94689c5af80f3701bf3951ea6f97b47e89f"
+      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_darwin_arm64.tar.gz"
+      sha256 "d5f4369ed46bf24b86d5cb5c87dcada46e353d3c5a44d1af41eb4eb3ea10a02a"
 
-      def install
+      define_method(:install) do
         bin.install "akv"
         generate_completions_from_executable(bin/"akv", "completion")
       end
@@ -29,26 +29,20 @@ class Akv < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_linux_amd64.tar.gz"
-        sha256 "809a986fb8993e630a8b81ae45c77caafedce8ae120e15fffca6a031e4a4806b"
-
-        def install
-          bin.install "akv"
-          generate_completions_from_executable(bin/"akv", "completion")
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_linux_amd64.tar.gz"
+      sha256 "1098d1d99ebf8d196a434848c0c15897c9363bb925434eb49d28a608f2321c87"
+      define_method(:install) do
+        bin.install "akv"
+        generate_completions_from_executable(bin/"akv", "completion")
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/abicky/akv/releases/download/v0.1.1/akv_linux_arm64.tar.gz"
-        sha256 "9b727b6bf8f650fd8af52bc25edf6b745048f818810749b094cb037fd3973b9f"
-
-        def install
-          bin.install "akv"
-          generate_completions_from_executable(bin/"akv", "completion")
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_linux_arm64.tar.gz"
+      sha256 "c7e941804c1b77a7afe89c0822e6413b532bc498a77758d6505b46029814da8b"
+      define_method(:install) do
+        bin.install "akv"
+        generate_completions_from_executable(bin/"akv", "completion")
       end
     end
   end
