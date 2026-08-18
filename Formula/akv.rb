@@ -5,12 +5,12 @@
 class Akv < Formula
   desc "A CLI tool for injecting Azure Key Vault secrets"
   homepage "https://github.com/abicky/akv"
-  version "0.1.3"
+  version "0.1.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_darwin_amd64.tar.gz"
-      sha256 "367911c92ab9a792238b8d8357dea2d37b858967c38b310be4e7fe20c3744d63"
+      url "https://github.com/abicky/akv/releases/download/v0.1.4/akv_darwin_amd64.tar.gz"
+      sha256 "9ad379eef2bdd715573681a14f46c547f9b3d670d9eb1020e8b65ef019cef264"
 
       define_method(:install) do
         bin.install "akv"
@@ -18,8 +18,8 @@ class Akv < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_darwin_arm64.tar.gz"
-      sha256 "d5f4369ed46bf24b86d5cb5c87dcada46e353d3c5a44d1af41eb4eb3ea10a02a"
+      url "https://github.com/abicky/akv/releases/download/v0.1.4/akv_darwin_arm64.tar.gz"
+      sha256 "326bc8e540440ce3898583e2506fb7eff07fa23103f6bdfe32467765a457e9ec"
 
       define_method(:install) do
         bin.install "akv"
@@ -30,16 +30,16 @@ class Akv < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_linux_amd64.tar.gz"
-      sha256 "1098d1d99ebf8d196a434848c0c15897c9363bb925434eb49d28a608f2321c87"
+      url "https://github.com/abicky/akv/releases/download/v0.1.4/akv_linux_amd64.tar.gz"
+      sha256 "586b5e8ad1c0e0cf6683551694a74a978b9e80a67980ed59d23e4de092c7cc1d"
       define_method(:install) do
         bin.install "akv"
         generate_completions_from_executable(bin/"akv", "completion")
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abicky/akv/releases/download/v0.1.3/akv_linux_arm64.tar.gz"
-      sha256 "c7e941804c1b77a7afe89c0822e6413b532bc498a77758d6505b46029814da8b"
+      url "https://github.com/abicky/akv/releases/download/v0.1.4/akv_linux_arm64.tar.gz"
+      sha256 "b381f4f8edf154071ee5f25d396b66a0acfd2437ad89fbf642cc34545bff0873"
       define_method(:install) do
         bin.install "akv"
         generate_completions_from_executable(bin/"akv", "completion")
